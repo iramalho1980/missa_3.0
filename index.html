@@ -85,19 +85,38 @@
         }
 
         .quadro {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .quadro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
         }
 
         .quadro:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 255, 0, 0.2);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 20px 40px rgba(255, 255, 0, 0.15),
+                0 15px 25px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 0, 0.3);
+            background: rgba(255, 255, 255, 0.12);
         }
 
         .quadro-header {
@@ -145,23 +164,47 @@
         }
 
         .cantico-item {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            padding: 12px;
-            margin-bottom: 10px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            draggable: true;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 4px 16px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .cantico-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
         }
 
         .cantico-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 0, 0.4);
+            transform: translateX(8px) scale(1.02);
+            box-shadow: 
+                0 8px 25px rgba(255, 255, 0, 0.2),
+                0 4px 16px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .cantico-item:hover::before {
+            left: 100%;
         }
 
         .cantico-name {
@@ -189,14 +232,39 @@
         }
 
         .missa-quadro {
-            background: rgba(255, 255, 0, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            border: 2px solid rgba(255, 255, 0, 0.3);
-            padding: 20px;
-            min-height: 600px;
+            background: rgba(255, 255, 0, 0.08);
+            backdrop-filter: blur(30px);
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 0, 0.2);
+            padding: 25px;
+            min-height: 650px;
             position: sticky;
             top: 20px;
+            box-shadow: 
+                0 15px 35px rgba(255, 255, 0, 0.1),
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .missa-quadro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 0, 0.6), transparent);
+            border-radius: 25px 25px 0 0;
+        }
+
+        .missa-quadro:hover {
+            box-shadow: 
+                0 20px 45px rgba(255, 255, 0, 0.15),
+                0 12px 40px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 0, 0.4);
         }
 
         .missa-header {
@@ -352,6 +420,111 @@
             animation: spin 1s ease-in-out infinite;
         }
 
+        .search-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .search-popup.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .search-popup-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px);
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 0, 0.3);
+            padding: 30px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+            position: relative;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .search-popup.show .search-popup-content {
+            transform: scale(1);
+        }
+
+        .search-popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 0, 0.3);
+        }
+
+        .search-popup-title {
+            color: #ffff00;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+        }
+
+        .search-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .search-result-item {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-result-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 0, 0.4);
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 255, 0, 0.2);
+        }
+
+        .search-result-category {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 0, 0.8);
+            margin-bottom: 5px;
+        }
+
+        .search-result-name {
+            color: #ffffff;
+            font-size: 0.9rem;
+            flex: 1;
+        }
+
+        .search-no-results {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            padding: 40px;
+        }
+
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
@@ -421,6 +594,19 @@
             <button class="close-btn" onclick="fecharPopup()">×</button>
             <div id="popupBody">
                 <!-- Conteúdo do popup será inserido aqui -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup de Pesquisa -->
+    <div class="search-popup" id="searchPopup">
+        <div class="search-popup-content">
+            <div class="search-popup-header">
+                <h3 class="search-popup-title">🔍 Resultados da Pesquisa</h3>
+                <button class="close-btn" onclick="fecharPopupPesquisa()">×</button>
+            </div>
+            <div class="search-results" id="searchResults">
+                <!-- Resultados da pesquisa serão inseridos aqui -->
             </div>
         </div>
     </div>
@@ -605,8 +791,8 @@
                 <div class="quadro-content">
                     ${canticos.map(cantico => `
                         <div class="cantico-item" draggable="true" ondragstart="drag(event)" data-categoria="${categoria}" data-cantico="${cantico}">
-                            <span class="cantico-name" onclick="abrirCantico('${categoria}', '${cantico}')">${formatarNomeCantico(cantico)}</span>
-                            <button class="add-btn" onclick="adicionarAMissa('${categoria}', '${cantico}')">+ Missa</button>
+                            <span class="cantico-name" onclick="event.stopPropagation(); abrirCantico('${categoria}', '${cantico}')" style="cursor: pointer; flex: 1;">${formatarNomeCantico(cantico)}</span>
+                            <button class="add-btn" onclick="event.stopPropagation(); adicionarAMissa('${categoria}', '${cantico}')">+ Missa</button>
                         </div>
                     `).join('')}
                 </div>
@@ -634,36 +820,84 @@
         // Configurar pesquisa
         function configurarPesquisa() {
             const searchInput = document.getElementById('searchInput');
+            let searchTimeout;
+            
             searchInput.addEventListener('input', function() {
-                const termo = this.value.toLowerCase();
-                filtrarCanticos(termo);
+                const termo = this.value.toLowerCase().trim();
+                
+                // Limpar timeout anterior
+                clearTimeout(searchTimeout);
+                
+                if (termo.length >= 2) {
+                    // Aguardar 300ms antes de pesquisar para evitar muitas chamadas
+                    searchTimeout = setTimeout(() => {
+                        abrirPopupPesquisa(termo);
+                    }, 300);
+                } else {
+                    fecharPopupPesquisa();
+                }
+            });
+
+            // Fechar popup ao pressionar Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    fecharPopupPesquisa();
+                }
             });
         }
 
-        // Filtrar cânticos pela pesquisa
-        function filtrarCanticos(termo) {
-            const quadros = document.querySelectorAll('.quadro');
+        // Abrir popup de pesquisa com resultados
+        function abrirPopupPesquisa(termo) {
+            const resultados = pesquisarCanticos(termo);
+            const popup = document.getElementById('searchPopup');
+            const searchResults = document.getElementById('searchResults');
             
-            quadros.forEach(quadro => {
-                const itens = quadro.querySelectorAll('.cantico-item');
-                let temResultado = false;
-                
-                itens.forEach(item => {
-                    const nome = item.querySelector('.cantico-name').textContent.toLowerCase();
-                    if (nome.includes(termo)) {
-                        item.style.display = 'flex';
-                        temResultado = true;
-                    } else {
-                        item.style.display = 'none';
+            if (resultados.length > 0) {
+                searchResults.innerHTML = resultados.map(resultado => `
+                    <div class="search-result-item">
+                        <div style="flex: 1;">
+                            <div class="search-result-category">${resultado.categoria}</div>
+                            <div class="search-result-name" onclick="abrirCantico('${resultado.categoria}', '${resultado.cantico}')">${resultado.nome}</div>
+                        </div>
+                        <button class="add-btn" onclick="adicionarAMissa('${resultado.categoria}', '${resultado.cantico}')">+ Missa</button>
+                    </div>
+                `).join('');
+            } else {
+                searchResults.innerHTML = `
+                    <div class="search-no-results">
+                        <p>Nenhum cântico encontrado para "${termo}"</p>
+                        <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.7;">Tente usar palavras-chave diferentes</p>
+                    </div>
+                `;
+            }
+            
+            popup.classList.add('show');
+        }
+
+        // Fechar popup de pesquisa
+        function fecharPopupPesquisa() {
+            const popup = document.getElementById('searchPopup');
+            popup.classList.remove('show');
+        }
+
+        // Pesquisar cânticos
+        function pesquisarCanticos(termo) {
+            const resultados = [];
+            
+            Object.keys(canticosData).forEach(categoria => {
+                canticosData[categoria].forEach(cantico => {
+                    const nome = formatarNomeCantico(cantico);
+                    if (nome.toLowerCase().includes(termo)) {
+                        resultados.push({
+                            categoria: categoria,
+                            cantico: cantico,
+                            nome: nome
+                        });
                     }
                 });
-                
-                // Expandir quadro se houver resultados
-                if (temResultado && termo) {
-                    quadro.classList.add('expanded');
-                    quadro.querySelector('.toggle-btn').textContent = '▲';
-                }
             });
+            
+            return resultados;
         }
 
         // Adicionar cântico à missa
@@ -683,8 +917,8 @@
             const lista = document.getElementById('missaList');
             lista.innerHTML = missaAtual.map((item, index) => `
                 <div class="missa-item" draggable="true" ondragstart="dragMissa(event, ${index})">
-                    <span onclick="abrirCantico('${item.categoria}', '${item.cantico}')">${item.nome}</span>
-                    <button class="remove-btn" onclick="removerDaMissa(${index})">×</button>
+                    <span onclick="event.stopPropagation(); abrirCantico('${item.categoria}', '${item.cantico}')" style="cursor: pointer; flex: 1;">${item.nome}</span>
+                    <button class="remove-btn" onclick="event.stopPropagation(); removerDaMissa(${index})">×</button>
                 </div>
             `).join('');
         }
@@ -778,6 +1012,13 @@
         document.getElementById('popupOverlay').addEventListener('click', function(e) {
             if (e.target === this) {
                 fecharPopup();
+            }
+        });
+
+        // Fechar popup de pesquisa ao clicar fora
+        document.getElementById('searchPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                fecharPopupPesquisa();
             }
         });
 
