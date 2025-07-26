@@ -671,21 +671,371 @@
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 5px;
+                max-width: 100%;
+            }
+
+            .header {
+                padding: 10px;
+                margin-bottom: 15px;
+                border-radius: 15px;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+                margin-bottom: 5px;
+            }
+
+            .header p {
+                font-size: 0.9rem;
+            }
+
+            .missa-quadro {
+                padding: 10px;
+                min-height: 200px;
+                max-height: 250px;
+                margin-bottom: 15px;
+                border-radius: 15px;
+            }
+
+            .missa-title {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+
+            .missa-controls {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 5px;
+                justify-content: center;
+            }
+
+            .control-btn {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+                min-height: 40px;
+                flex: 1;
+                min-width: 80px;
+                max-width: 120px;
+                width: auto;
+            }
+
+            .missa-list {
+                min-height: 120px;
+                max-height: 150px;
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            .search-container {
+                margin: 15px 0;
+                padding: 0 5px;
+            }
+
+            .search-input {
+                font-size: 16px; /* Evita zoom no iOS */
+                padding: 12px 15px;
+                border-radius: 25px;
+                width: 100%;
+                box-sizing: border-box;
+                -webkit-appearance: none;
+                -webkit-border-radius: 25px;
+            }
+
             .main-content {
                 grid-template-columns: 1fr;
+                gap: 10px;
+                padding: 0 5px;
             }
-            
+
+            .quadro {
+                margin-bottom: 10px;
+                border-radius: 15px;
+            }
+
+            .quadro-header {
+                padding: 10px;
+                border-radius: 15px 15px 0 0;
+            }
+
+            .quadro-title {
+                font-size: 0.95rem;
+            }
+
+            .toggle-btn {
+                min-height: 35px;
+                min-width: 35px;
+                font-size: 1rem;
+            }
+
+            .quadro-content {
+                max-height: 180px;
+                padding: 5px;
+            }
+
+            .cantico-item {
+                padding: 6px;
+                margin-bottom: 3px;
+                border-radius: 8px;
+                min-height: 40px;
+                display: flex;
+                align-items: center;
+            }
+
+            .cantico-name {
+                font-size: 0.85rem;
+                line-height: 1.2;
+                min-height: 40px;
+                display: flex;
+                align-items: center;
+                flex: 1;
+                padding-right: 5px;
+            }
+
+            .add-btn {
+                padding: 6px 10px;
+                font-size: 0.75rem;
+                min-height: 35px;
+                min-width: 60px;
+                border-radius: 15px;
+                flex-shrink: 0;
+            }
+
+            .popup-content {
+                width: 95vw;
+                max-width: 95vw;
+                height: 85vh;
+                max-height: 85vh;
+                margin: 7.5vh auto;
+                padding: 10px;
+                border-radius: 20px;
+            }
+
+            .popup-content h3 {
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+
+            .popup-content iframe {
+                height: calc(85vh - 80px);
+                border-radius: 10px;
+            }
+
+            .close-btn {
+                top: 10px;
+                right: 10px;
+                width: 35px;
+                height: 35px;
+                font-size: 1.2rem;
+                min-height: 35px;
+                min-width: 35px;
+            }
+
+            .search-popup {
+                padding: 10px;
+            }
+
+            .search-popup-content {
+                width: 95vw;
+                max-width: 95vw;
+                margin: 5vh auto;
+                padding: 10px;
+                max-height: 80vh;
+                border-radius: 20px;
+            }
+
+            .search-popup-title {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+
+            .search-results {
+                max-height: 60vh;
+                overflow-y: auto;
+            }
+
+            .search-result-item {
+                padding: 8px;
+                margin-bottom: 5px;
+                border-radius: 10px;
+                min-height: 50px;
+                display: flex;
+                align-items: center;
+            }
+
+            .search-result-category {
+                font-size: 0.75rem;
+            }
+
+            .search-result-name {
+                font-size: 0.85rem;
+                line-height: 1.2;
+                min-height: 40px;
+                display: flex;
+                align-items: center;
+            }
+
+            .missa-item {
+                padding: 6px;
+                margin-bottom: 3px;
+                border-radius: 8px;
+                min-height: 40px;
+                display: flex;
+                align-items: center;
+            }
+
+            .missa-item span {
+                font-size: 0.85rem;
+                line-height: 1.2;
+                min-height: 40px;
+                display: flex;
+                align-items: center;
+                flex: 1;
+            }
+
+            .missa-item button {
+                min-height: 35px;
+                min-width: 35px;
+                font-size: 1rem;
+                flex-shrink: 0;
+            }
+
+            /* Ajustes específicos para iOS */
+            input, button, select, textarea {
+                -webkit-appearance: none;
+                -webkit-border-radius: 0;
+                border-radius: 0;
+            }
+
+            .search-input {
+                -webkit-appearance: none;
+                -webkit-border-radius: 25px;
+                border-radius: 25px;
+            }
+
+            /* Evitar zoom em inputs no iOS */
+            input[type="text"] {
+                font-size: 16px !important;
+                -webkit-text-size-adjust: 100%;
+            }
+
+            /* Melhorar área de toque para iOS */
+            .cantico-name, .missa-item span, .search-result-name {
+                -webkit-tap-highlight-color: rgba(255, 255, 0, 0.2);
+                cursor: pointer;
+            }
+
+            .add-btn, .control-btn, .close-btn, .toggle-btn {
+                -webkit-tap-highlight-color: rgba(255, 255, 0, 0.3);
+                touch-action: manipulation;
+            }
+
+            /* Scrollbars para iOS */
+            .missa-list, .quadro-content, .search-results {
+                -webkit-overflow-scrolling: touch;
+            }
+
+            /* Prevenir seleção de texto indesejada */
+            .quadro-header, .missa-header, .search-popup-header {
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+        }
+
+        /* Responsividade para tablets (iPad) */
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                padding: 15px;
+                max-width: 100%;
+            }
+
+            .header {
+                padding: 20px;
+            }
+
             .header h1 {
                 font-size: 2rem;
             }
 
-            .missa-controls {
-                flex-direction: column;
-                align-items: center;
+            .main-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
             }
 
-            .control-btn {
-                width: 200px;
+            .popup-content {
+                width: 85vw;
+                max-width: 700px;
+                height: 80vh;
+            }
+
+            .popup-content iframe {
+                height: calc(80vh - 100px);
+            }
+
+            .search-popup-content {
+                width: 80vw;
+                max-width: 600px;
+            }
+
+            .missa-quadro {
+                max-height: 300px;
+            }
+
+            .missa-list {
+                max-height: 200px;
+            }
+        }
+
+        /* Ajustes para orientação landscape em dispositivos móveis */
+        @media screen and (max-width: 768px) and (orientation: landscape) {
+            .popup-content {
+                height: 90vh;
+                max-height: 90vh;
+                margin: 5vh auto;
+                width: 90vw;
+            }
+
+            .popup-content iframe {
+                height: calc(90vh - 70px);
+            }
+
+            .search-popup-content {
+                height: 85vh;
+                max-height: 85vh;
+                margin: 7.5vh auto;
+            }
+
+            .missa-quadro {
+                max-height: 200px;
+            }
+
+            .missa-list {
+                max-height: 120px;
+            }
+
+            .main-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .quadro-content {
+                max-height: 120px;
+            }
+        }
+
+        /* Ajustes específicos para iPad Pro */
+        @media screen and (min-width: 1024px) and (max-width: 1366px) {
+            .main-content {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
+            .popup-content {
+                width: 70vw;
+                max-width: 900px;
             }
         }
 
@@ -944,7 +1294,7 @@
                 <div class="quadro-content">
                     ${canticos.map(cantico => `
                         <div class="cantico-item" draggable="true" ondragstart="drag(event)" data-categoria="${categoria}" data-cantico="${cantico}">
-                            <span class="cantico-name" onclick="event.stopPropagation(); abrirCantico('${categoria}', '${cantico}')" style="cursor: pointer; flex: 1;">${formatarNomeCantico(cantico)}</span>
+                            <span class="cantico-name" onclick="event.stopPropagation(); abrirCanticoCorrigido('${categoria}', '${cantico}')" style="cursor: pointer; flex: 1;">${formatarNomeCantico(cantico)}</span>
                             <button class="add-btn" onclick="event.stopPropagation(); adicionarAMissa('${categoria}', '${cantico}')">+ Missa</button>
                         </div>
                     `).join('')}
