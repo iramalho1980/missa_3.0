@@ -786,7 +786,7 @@
                 "tu_es_a_razao_da_jornada.pdf",
                 "vem_louvar.pdf"
             ],
-            "2 - Ato Penitencial": [
+            "2 - Ato penitencial": [
                 "conheco_um_coracao.pdf",
                 "coracoes_arrependidos.pdf",
                 "kyrie_eleison_jmj.pdf",
@@ -798,13 +798,13 @@
                 "senhor_tende_piedade_de_nos.pdf",
                 "senhor_tende_piedade_perdoai_nossa_culpa.pdf"
             ],
-            "3 - Glória": [
+            "3 - Gloria": [
                 "a_ele_seja_a_gloria.pdf",
                 "gloria_a_deus_nas_alturas.pdf",
                 "gloria_a_deus_nas_alturas__rock_balada.pdf",
                 "gloria_ao_pai_criador.pdf"
             ],
-            "4 - Aclamação ao Evangelho": [
+            "4 - Aclamação ao evangelho": [
                 "a_minhalma_abrirei.pdf",
                 "a_vossa_palavra_senhor.pdf",
                 "aleluia_como_o_pai_me_amou.pdf",
@@ -832,12 +832,7 @@
                 "o_senhor_eh_santo.pdf",
                 "santo_santo_e.pdf"
             ],
-            "7 - Abraço da Paz": [
-                "esteja_sempre_com_voce.pdf",
-                "irmao_minha_paz_eu_te_dou.pdf",
-                "paz_paz_de_cristo.pdf"
-            ],
-            "8 - Comunhão": [
+            "7 - Comunhão": [
                 "a_barca.pdf",
                 "a_ti_meu_deus.pdf",
                 "antes_da_morte_e_ressurreicao.pdf",
@@ -861,13 +856,13 @@
                 "vem_eu_mostrarei.pdf",
                 "vou_cantar_teu_amor.pdf"
             ],
-            "9 - Ação de Graças": [
+            "8 - Ação de Graças": [
                 "deus_esta_aqui.pdf",
                 "e_impossivel_nao_crer_em_ti.pdf",
                 "espirito_santo.pdf",
                 "obrigado_senhor.pdf"
             ],
-            "10 - Final": [
+            "9 - Final": [
                 "a_alegria_esta_no_coracao.pdf",
                 "como_o_pai_me_enviou.pdf",
                 "cristo_eh_a_felicidade.pdf",
@@ -878,7 +873,12 @@
                 "tomado_pela_mao.pdf",
                 "tu_es_razao_jornada.pdf"
             ],
-            "11 - Cânticos Marianos": [
+            "10 - Abraço de Paz": [
+                "esteja_sempre_com_voce.pdf",
+                "irmao_minha_paz_eu_te_dou.pdf",
+                "paz_paz_de_cristo.pdf"
+            ],
+            "11 - Canticos Marianos": [
                 "a_escolhida.pdf",
                 "ave_cheia_de_graca.pdf",
                 "imaculada_maria_de_deus.pdf",
@@ -886,7 +886,7 @@
                 "santa_mae_maria.pdf",
                 "santa_maria_vem.pdf"
             ],
-            "12 - Louvor e Meditação": [
+            "12 - Louvor e meditação": [
                 "a_alegria_esta_no_coracao.pdf",
                 "a_nos_descei_divina_luz.pdf",
                 "agua_viva.pdf",
@@ -1136,8 +1136,8 @@
             const popup = document.getElementById('popupOverlay');
             const popupBody = document.getElementById('popupBody');
             
-            // Construir caminho correto do arquivo
-            const caminhoArquivo = `./Missa/Missa/${encodeURIComponent(categoria)}/${encodeURIComponent(cantico)}`;
+            // Construir caminho correto do arquivo baseado na estrutura real
+            const caminhoArquivo = `./Missa/Missa/${categoria}/${cantico}`;
             
             // Verificar se é PDF ou imagem
             if (cantico.toLowerCase().endsWith('.pdf')) {
